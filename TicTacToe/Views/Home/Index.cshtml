@@ -1,0 +1,164 @@
+﻿@model Game 
+@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/jquery/jquery.js" />
+    <link rel="stylesheet" href="~/lib/popper.js/popper.js" />
+    <link rel="stylesheet" href="~/lib/bootstrap/js/bootstrap.js">
+</head>
+<div class="jumbotron text-center text-white">Tic Tac Toe</div>
+@if( !string.IsNullOrEmpty(Model.Message))
+{
+    
+    <h2 class="bg-success text-center text-white">
+        @Model.Message
+    </h2>
+    <a asp-action="NewGame">New Game</a>
+    
+}
+else 
+{ 
+    <h2 class="text-center">
+        @Model.turnMessage
+    </h2>
+}
+<body>
+    <div class="row justify-content-center">
+        <form asp-action="Place" method="post">
+            <div class="col-md-10">
+                @if(!string.IsNullOrEmpty(@Model.CellID1))
+                {
+                    <button disabled class="btn btn-outline-dark">
+                    <p>@Model.CellID1</p>
+                    </button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-outline-dark" name="id" value="1">
+                    <p> </p>
+                    </button>
+                }
+            </div>
+        </form>
+        <form asp-action="Place" method="post">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-dark" name="id" value="2">
+                @if (!string.IsNullOrEmpty(@Model.CellID2))
+                {
+                    <p>@Model.CellID2</p>
+                }
+                else
+                {
+                    <p> </p>
+                }
+                    </button>
+            </div>
+        </form>
+        <form asp-action="Place" method="post">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-dark" name="id" value="3">
+                    @if (!string.IsNullOrEmpty(@Model.CellID3))
+                    {
+                        <p>@Model.CellID3</p>
+                    }
+                    else
+                    {
+                        <p> </p>
+                    }
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="row justify-content-center">
+        <form asp-action="Place" method="post">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-dark" name="id" value="4">
+                    @if (!string.IsNullOrEmpty(@Model.CellID4))
+                    {
+                        <p>@Model.CellID4</p>
+                    }
+                    else
+                    {
+                        <p> </p>
+                    }
+                </button>
+            </div>
+        </form>
+        <form asp-action="Place" method="post">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-dark" name="id" value="5">
+                    @if (!string.IsNullOrEmpty(@Model.CellID5))
+                    {
+                        <p>@Model.CellID5</p>
+                    }
+                    else
+                    {
+                        <p> </p>
+                    }
+                </button>
+            </div>
+        </form>
+        <form asp-action="Place" method="post">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-dark" name="id" value="6">
+                    @if (!string.IsNullOrEmpty(@Model.CellID6))
+                    {
+                        <p>@Model.CellID6</p>
+                    }
+                    else
+                    {
+                        <p> </p>
+                    }
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="row justify-content-center">
+        <form asp-action="Place" method="post">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-dark" name="id" value="7">
+                    @if (!string.IsNullOrEmpty(@Model.CellID7))
+                    {
+                        <p>@Model.CellID7</p>
+                    }
+                    else
+                    {
+                        <p> </p>
+                    }
+                </button>
+            </div>
+        </form>
+        <form asp-action="Place" method="post">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-dark" name="id" value="8">
+                    @if (!string.IsNullOrEmpty(@Model.CellID8))
+                    {
+                        <p>@Model.CellID8</p>
+                    }
+                    else
+                    {
+                        <p> </p>
+                    }
+                </button>
+            </div>
+        </form>
+        <form asp-action="Place" method="post">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-dark" name="id" value="9">
+                    @if (!string.IsNullOrEmpty(@Model.CellID9))
+                    {
+                        <p>@Model.CellID9</p>
+                    }
+                    else
+                    {
+                        <p> </p>
+                    }
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
